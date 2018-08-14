@@ -16,9 +16,9 @@
     double amount = Double.parseDouble(request.getParameter("amount"));
     double rate = Float.parseFloat(request.getParameter("rate"));
     int year = Integer.parseInt(request.getParameter("year"));
-    double interest_year = amount + (amount * rate * 0.1);
+    double interest_year = 0;
     for (int i = 1; i <= year; i++) {
-        interest_year = interest_year * i;
+        interest_year = (amount + (amount * rate * 0.1))*i;
     }
 %>
 <h1>Interest years: <%=interest_year%>
